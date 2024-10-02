@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 2,),
             Text(
-              'UI/UX and Web Developer',
+              'UI/UX & Web Developer',
               style: TextStyle(
                 color: lightBlueColor,
                 fontSize: 16,
