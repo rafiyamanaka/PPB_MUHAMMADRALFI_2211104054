@@ -1,5 +1,4 @@
 // mendeklarasikan fungsi
-import 'dart:async';
 
 void cetakPesan(String pesan){
   print(pesan);
