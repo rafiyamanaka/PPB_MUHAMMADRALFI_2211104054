@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:guided5/customScroll.dart';
-import 'package:guided5/flex_exp.dart';
+// import 'package:guided5/customScroll.dart';
+// import 'package:guided5/flex_exp.dart';
 import 'package:guided5/jenis_list.dart';
 
 void main() {
