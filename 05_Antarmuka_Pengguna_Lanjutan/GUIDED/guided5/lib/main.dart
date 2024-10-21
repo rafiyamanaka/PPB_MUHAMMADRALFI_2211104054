@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guided5/customScroll.dart';
 // import 'package:guided5/customScroll.dart';
 // import 'package:guided5/flex_exp.dart';
 import 'package:guided5/jenis_list.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const customScrollview(),
       // home: const flexScreen(),
-      home: const listScreen(),
+      home: const customScrollview(),
     );
   }
 }
