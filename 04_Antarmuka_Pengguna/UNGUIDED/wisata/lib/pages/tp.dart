@@ -81,7 +81,7 @@ class TpPage extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: Image.network('https://lh6.googleusercontent.com/proxy/uPlsJjWHH1xiFupDC7jJN3xTm8BKPIIM2ORnW_4aH8HSnQ57tqa91_1u_vmTrg85TFgh26GH39fR29fBH9weOsXJ1UElhs5MMSEQSpSX2vfy4kiezJeDw01mhFUmFQcRDItK',
+                        child: Image.network('https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/1035/2024/03/21/Screenshot_2024-03-21-20-43-17-341_comgoogleandroidappsmaps-edit-881358050.jpg',
                         width: double.infinity,
                         height: 125,
                         fit: BoxFit.cover,
