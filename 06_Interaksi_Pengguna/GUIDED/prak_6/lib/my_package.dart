@@ -22,7 +22,7 @@ class _myPackageState extends State<myPackage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            TextField(
+            const TextField(
               obscureText: false,
               obscuringCharacter: '*',
               decoration: InputDecoration(
@@ -31,8 +31,8 @@ class _myPackageState extends State<myPackage> {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16),
-            TextField(
+            const SizedBox(height: 16),
+            const TextField(
               obscureText: true,
               obscuringCharacter: '*',
               decoration: InputDecoration(
@@ -41,10 +41,10 @@ class _myPackageState extends State<myPackage> {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'This is Elevated Button',
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
@@ -52,19 +52,19 @@ class _myPackageState extends State<myPackage> {
                 backgroundColor: Colors.blueAccent,
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Ini adalah Text Button',
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             DropdownButton<String>(
               value: selectedValue,
               isExpanded: true,
-              hint: Text('Pilih Opsi'),
+              hint: const Text('Pilih Opsi'),
               items: <String>['Opsi 1', 'Opsi 2', 'Opsi 3']
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
