@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:guided5/customScroll.dart';
-// import 'package:guided5/customScroll.dart';
-// import 'package:guided5/flex_exp.dart';
-// import 'package:guided5/jenis_list.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:prak_6/my_navbar.dart';
+// import 'package:prak_6/my_package.dart';
+// import 'package:prak_6/my_tabbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        textTheme: GoogleFonts.plusJakartaSansTextTheme()
       ),
-      // home: const customScrollview(),
-      // home: const flexScreen(),
-      home: const customScrollview(),
+      // home: myNavbar(),
+      home: const myNavbar(),
     );
   }
 }
