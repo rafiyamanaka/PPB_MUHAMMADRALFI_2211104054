@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:prak_6/my_navbar.dart';
-// import 'package:prak_6/my_package.dart';
-// import 'package:prak_6/my_tabbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.plusJakartaSansTextTheme()
       ),
-      // home: myNavbar(),
+      // home: const myTappbar(),
       home: const myNavbar(),
     );
   }
