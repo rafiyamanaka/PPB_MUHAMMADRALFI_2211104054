@@ -56,9 +56,9 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Latihan Memilih Gambar'),
+        title: Text('Unguided'),
         centerTitle: true,
-        backgroundColor: Colors.yellow[700],
+        backgroundColor: Colors.orangeAccent,
       ),
       body: Center(
         child: Padding(
@@ -66,42 +66,62 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 10), // Atur jarak kecil dari AppBar ke gambar
+              SizedBox(height: 20),
               Container(
-                height: 150,
-                width: 150,
+                height: 180,
+                width: 180,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(16),
                   color: Colors.grey[200],
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 8,
+                      offset: Offset(2, 4),
+                    ),
+                  ],
                 ),
                 child: _image != null
-                    ? Image.file(_image!, fit: BoxFit.cover)
-                    : Icon(
-                        Icons.image,
-                        color: Colors.grey[400],
-                        size: 80,
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.file(_image!, fit: BoxFit.cover),
+                      )
+                    : Center(
+                        child: Icon(
+                          Icons.image,
+                          color: Colors.grey[400],
+                          size: 80,
+                        ),
                       ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton.icon(
                     onPressed: _pickImageFromCamera,
-                    icon: Icon(Icons.camera_alt, color: Colors.black),
-                    label: Text("Camera", style: TextStyle(color: Colors.black)),
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(Colors.yellow[700]),
+                    icon: Icon(Icons.camera_alt, color: Colors.white),
+                    label: Text("Camera", style: TextStyle(color: Colors.black),),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orangeAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 5,
                     ),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 20),
                   ElevatedButton.icon(
                     onPressed: _pickImageFromGallery,
-                    icon: Icon(Icons.photo, color: Colors.black),
+                    icon: Icon(Icons.photo, color: Colors.white),
                     label: Text("Gallery", style: TextStyle(color: Colors.black)),
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(Colors.yellow[700]),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orangeAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 5,
                     ),
                   ),
                 ],
@@ -109,10 +129,14 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
               SizedBox(height: 20),
               ElevatedButton.icon(
                 onPressed: _clearImage,
-                icon: Icon(Icons.delete, color: Colors.black), 
-                label: Text("Gallery", style: TextStyle(color: Colors.black)),
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all(Colors.yellow[700])
+                icon: Icon(Icons.delete, color: Colors.white),
+                label: Text("Clear Image", style: TextStyle(color: Colors.white)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.redAccent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 5,
                 ),
               ),
             ],

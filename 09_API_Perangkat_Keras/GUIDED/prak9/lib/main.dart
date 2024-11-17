@@ -19,9 +19,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ImageScreen(
-        ImageSourceType.gallery
-      ),
+      // home: const camera_screen(),
+      home: ImageScreen(ImageSourceType.gallery),
     );
   }
 }
