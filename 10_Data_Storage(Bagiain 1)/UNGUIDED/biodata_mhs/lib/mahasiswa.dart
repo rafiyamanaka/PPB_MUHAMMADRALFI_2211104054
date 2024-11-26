@@ -31,7 +31,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: const Color.fromRGBO(82, 170, 94, 1.0),
         centerTitle: true,
         title: const Text('Tambah Biodata Mahasiswa'),
       ),
@@ -63,6 +63,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
+                
                 onPressed: _saveStudent,
                 child: const Text('Simpan'),
               ),

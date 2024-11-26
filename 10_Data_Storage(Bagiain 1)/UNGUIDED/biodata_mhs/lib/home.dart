@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+         backgroundColor: const Color.fromRGBO(82, 170, 94, 1.0),
         centerTitle: true,
         title: const Text('SQLite Biodata Mahasiswa'),
       ),
@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _navigateToAddPage,
         child: const Icon(Icons.add),
+        backgroundColor: const Color.fromRGBO(82, 170, 94, 1.0),
       ),
     );
   }
