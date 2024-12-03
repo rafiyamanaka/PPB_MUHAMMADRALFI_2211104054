@@ -2,7 +2,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:gd11/main.dart';
-import 'package:gd11/page.dart';
 
 class MyNotification extends StatefulWidget {
   const MyNotification({super.key});
@@ -24,40 +23,49 @@ class _MyNotificationState extends State<MyNotification> {
 
     // Mendengarkan pesan saat aplikasi aktif
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-  RemoteNotification? notification = message.notification;
-  AndroidNotification? android = message.notification?.android;
+      RemoteNotification? notification = message.notification;
+      AndroidNotification? android = message.notification?.android;
 
-  if (notification != null && android != null) {
-    FlutterLocalNotificationsPlugin().show(
-      notification.hashCode,
-      notification.title ?? "Informasi Mahasiswa",
-      "${notification.body ?? ""}\nNama: John Doe\nNIM: 12345678\nKelas: IF-1\nProdi: Teknik Informatika",
-      NotificationDetails(
-        android: AndroidNotificationDetails(
-          channel.id,
-          channel.name,
-          channelDescription: channel.description,
-          icon: '@mipmap/ic_launcher',
-        ),
-      ),
-    );
-  }
-});
-
-FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) => NotificationDetailPage(
-        nama: "John Doe",
-        nim: "12345678",
-        kelas: "IF-1",
-        prodi: "Teknik Informatika",
-      ),
-    ),
-  );
-});
-
+      // Jika notifikasi tersedia, tampilkan menggunakan notifikasi lokal
+      if (notification != null && android != null) {
+        FlutterLocalNotificationsPlugin().show(
+          notification.hashCode, // ID notifikasi (hashCode untuk unik)
+          notification.title, // Judul notifikasi
+          notification.body, // Isi notifikasi
+          NotificationDetails(
+            android: AndroidNotificationDetails(
+              channel.id,
+              channel.name,
+              channelDescription: channel.description,
+              color: Colors.blue,
+              icon: "@mipmap/ic_launcher",
+            ),
+          ),
+        );
+      }
+    });
+    // Menangani aksi ketika notifikasi dibuka
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      RemoteNotification? notification = message.notification;
+      AndroidNotification? android = message.notification?.android;
+      // Jika notifikasi tersedia, tampilkan dialog
+      if (notification != null && android != null) {
+        showDialog(
+          context: context,
+          builder: (_) {
+            return AlertDialog(
+              title: Text(notification.title ?? ""), // Judul dialog
+              content: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [Text(notification.body ?? "")], // Isi dialog
+                ),
+              ),
+            );
+          },
+        );
+      }
+    });
     // Memanggil metode untuk mengambil token FCM perangkat
     getToken();
   }
