@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "55215780307",
+    "project_id": "praktikumral",
+    "storage_bucket": "praktikumral.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55215780307:android:035f1d0e080cac36607f26",
+        "android_client_info": {
+          "package_name": "com.example.gd11"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbhMdloi5lMmkC1xVfa_nid-6VNe8zdF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
