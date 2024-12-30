@@ -10,6 +10,7 @@ class HomePages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purpleAccent,
         title: Text('Simple Notes App'),
       ),
       body: Obx(() => ListView.builder(

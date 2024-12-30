@@ -12,14 +12,6 @@ class MyDetail extends StatelessWidget {
       body: Center(
         child: Text('Detail Page'),
       ),
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: const [
-      //       Text('Detail Page'),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }
